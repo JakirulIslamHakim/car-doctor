@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import loginImg from "../../assets/images/login/login.svg";
 
-const Login = () => {
+const Singup = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
+    const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    console.log(name, email, password);
   };
 
   return (
@@ -18,7 +19,19 @@ const Login = () => {
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 border-4">
           <form onSubmit={handleLogin} className="card-body">
-            <h1 className="text-5xl font-bold text-center my-4">Login!</h1>
+            <h1 className="text-5xl font-bold text-center my-4">Sing Up</h1>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Name</span>
+              </label>
+              <input
+                type="text"
+                name="name"
+                placeholder="name"
+                className="input input-bordered"
+                required
+              />
+            </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -33,31 +46,26 @@ const Login = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Password</span>
+                <span className="label-text">Confirm Password</span>
               </label>
               <input
                 type="password"
                 name="password"
-                placeholder="password"
+                placeholder="Confirm password"
                 className="input input-bordered"
                 required
               />
-              <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
-                  Forgot password?
-                </a>
-              </label>
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Login</button>
+              <button className="btn btn-primary">Sing Up</button>
             </div>
             <p className="text-xl text-center">
-              New to Car doctor.
+              Already have an account ?
               <Link
                 className="text-orange-500 font-bold underline"
-                to={"/singup"}
+                to={"/login"}
               >
-                Singup
+                Login
               </Link>
             </p>
           </form>
@@ -67,4 +75,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Singup;
