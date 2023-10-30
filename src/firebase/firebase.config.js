@@ -9,5 +9,6 @@ const firebaseConfig = {
   appId:import.meta.envVITE_appId
 };
 
+
  const app = initializeApp(firebaseConfig);
 export default app
