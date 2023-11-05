@@ -46,7 +46,7 @@ const BookServices = () => {
         <img className="w-full " src={checkout} alt="" />
       </div>
       <div className="bg-[#F3F3F3] md:p-10 my-5 rounded-xl">
-        <h2 className="text-3xl text-center font-semibold">{title}</h2>
+        <h2 className="text-3xl text-center font-semibold">Booking Service: {title}</h2>
         <form onSubmit={handleBookOrder} className="card-body">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="form-control">
